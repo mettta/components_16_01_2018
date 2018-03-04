@@ -2,6 +2,7 @@ export class Form {
 	constructor({el, onUserData}) {
 		this.el = el;
 		this.onUserData = onUserData;
+		this.blockname = 'chatform';
 		this._initEvents();
 	}
 
@@ -24,12 +25,13 @@ export class Form {
 	}
 
 	render() {
+		this.el.classList.add(this.blockname);
 		this.el.innerHTML = `
 			<form>
-				<input name="nickname" type="text" placeholder="Имя пользователя"></input>
+				<input class="${this.blockname}__nickname_input" name="nickname" type="text" placeholder="Ваше имя"></input>
 				<br>
-				<textarea name="text"></textarea>
-				<input type="submit" value="Отправить">
+				<textarea class="${this.blockname}__text_input" name="text" placeholder="Сообщение:"></textarea>
+				<input class="${this.blockname}__button_send" type="submit" value="Отправить">
 			</form>
 		`;
 	}
