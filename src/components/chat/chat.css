@@ -28,4 +28,14 @@
 	color: teal;
 }
 
-.chat__message_text {}
+.chat__message_text {
+	color: Black;
+}
+
+.chat__message_placeholder {
+	color: thistle;
+}
+
+.chat__user_placeholder {
+	color: rgb(155, 143, 152);
+}

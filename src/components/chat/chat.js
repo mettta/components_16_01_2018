@@ -41,9 +41,10 @@ export class Chat {
 		return this.data.messages
 			.map((messageObj) => 
 			`<li class="chat__message"><span class="chat__message_nickname">${
-			messageObj.nickname ? messageObj.nickname : DEFAULT_USER_NAME
+			messageObj.nickname ? messageObj.nickname : `<span class="chat__user_placeholder">${DEFAULT_USER_NAME}</span>`
 			}</span>: <span class="chat__message_text">${
-			messageObj.text ? messageObj.text : "промолчал..."}</span></li>`)
+			messageObj.text ? messageObj.text : `<span class="chat__message_placeholder">промолчал...</span>`
+			}</span></li>`)
 			.join(``);
 	}
 }
