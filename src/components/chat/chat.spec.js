@@ -30,6 +30,11 @@ describe("Chat", function() {
 			expect(Instance.el).to.be.an.instanceof(HTMLElement);
 		});
 
+		it('Instance should contains blockname property, and blockname should be a string', function() {
+			expect(Instance).to.have.property('blockname');
+			expect(Instance.blockname).to.be.an('string');
+		});
+
 		it('Instance should contains render() function', function() {
 			expect(Instance).to.have.property('render').an('function');
 		});

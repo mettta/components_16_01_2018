@@ -7,9 +7,7 @@ import {Form as Module} from './form.js';
 
 let Instance = new Module({
 	el: document.createElement('div'),
-	onUserData: (messageData) => {
-		chat.addMessage(messageData);
-	},
+	onSubmit: () => {},
 });
 
 describe("Form", function() {
@@ -32,12 +30,17 @@ describe("Form", function() {
 			expect(Instance.el).to.be.an.instanceof(HTMLElement);
 		});
 
-		it('Instance should contains onUserData property', function() {
-			expect(Instance).to.have.property('onUserData');
+		it('Instance should contains _onSubmit property', function() {
+			expect(Instance).to.have.property('_onSubmit');
 		});
 
-		it('Instance.onUserData should be a function', function() {
-			expect(Instance.onUserData).to.be.an('function');
+		it('Instance._onSubmit should be a function', function() {
+			expect(Instance._onSubmit).to.be.an('function');
+		});
+
+		it('Instance should contains blockname property, and blockname should be a string', function() {
+			expect(Instance).to.have.property('blockname');
+			expect(Instance.blockname).to.be.an('string');
 		});
 
 		it('Instance should contains render() function', function() {
