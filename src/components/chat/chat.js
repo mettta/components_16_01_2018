@@ -6,17 +6,35 @@ export class Chat {
 		this.blockname = 'chat';
 		this.el.classList.add(this.blockname);
 
+		this._scrollStrategy = 'bottom';
+
 		this.data = data;
 		this._initEvents();
 	}
 
 	_initEvents() { }
 
-	render() {
-		// TODO: save scroll
+	render({scroll} = {}) {
+		this._saveScrollTop();
 
 		this.el.innerHTML = `<ul class="chat__messages">${
 			this._getMessagesHtml()}</ul>`;
+
+		this._restoreScrollTop(scroll);
+	}
+
+	_saveScrollTop() {
+		this._scrollTop = this.el.scrollTop;
+	}
+
+	_restoreScrollTop() {
+		switch (this._scrollStrategy) {
+			case 'bottom':
+				this.el.scrollTop = this.el.scrollHeight;
+				break;
+			case 'fixed':
+				this.el.scrollTop = this._scrollTop;
+		}
 	}
 
 	// setMessages(messages) {
@@ -24,9 +42,9 @@ export class Chat {
 	// 	this.add(messages);
 	// }
 
-	// setScrollStrategy(strategy) {
-	// 	this._scrollStrategy = strategy;
-	// }
+	setScrollStrategy(strategy) {
+		this._scrollStrategy = strategy;
+	}
 
 	add(messages) {
 		let addOneMessageMethod = this.addMessage.bind(this);
@@ -36,7 +54,6 @@ export class Chat {
 
 	addMessage(message) {
 		this.data.messages.push(this._prepareMessage(message));
-		this.render();
 	}
 
 	_prepareMessage({name, text, date = Date.now(), html}) {

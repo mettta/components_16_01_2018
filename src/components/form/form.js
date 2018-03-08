@@ -14,8 +14,6 @@ export class Form {
 		this.onSubmit({
 			text: event.target.querySelector('textarea').value
 		});
-
-		this.el.querySelector('form').reset();
 	}
 
 	render() {
