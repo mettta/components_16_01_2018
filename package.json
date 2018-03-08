@@ -6,6 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/static",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "pug": "./node_modules/.bin/pug -c --extension pug.js --watch --pretty --name-after-file src/components/**/*.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
