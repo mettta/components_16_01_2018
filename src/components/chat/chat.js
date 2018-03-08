@@ -7,6 +7,7 @@ export class Chat {
 		this.el.classList.add(this.blockname);
 
 		this._scrollStrategy = 'bottom';
+		this._scrollPos = 0;
 
 		this.data = data;
 		this._initEvents();
@@ -24,7 +25,7 @@ export class Chat {
 	}
 
 	_saveScrollTop() {
-		this._scrollTop = this.el.scrollTop;
+		this._scrollPos = this.el.scrollTop;
 	}
 
 	_restoreScrollTop() {
@@ -33,7 +34,7 @@ export class Chat {
 				this.el.scrollTop = this.el.scrollHeight;
 				break;
 			case 'fixed':
-				this.el.scrollTop = this._scrollTop;
+				this.el.scrollTop = this._scrollPos;
 		}
 	}
 
