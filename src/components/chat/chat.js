@@ -18,8 +18,12 @@ export class Chat {
 	render() {
 		this._saveScrollTop();
 
-		this.el.innerHTML = `<ul class="chat__messages">${
-			this._getMessagesHtml()}</ul>`;
+		this.el.innerHTML = chatTemplate({
+			blockname: this.blockname,
+			messages: this.data.messages
+		});
+		
+		// `<ul class="chat__messages">${this._getMessagesHtml()}</ul>`;
 
 		this._restoreScrollTop(scroll);
 	}

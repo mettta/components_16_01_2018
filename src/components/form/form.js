@@ -1,3 +1,7 @@
+import  './form.pug.js';
+
+// * as Template from
+
 export class Form {
 	constructor({el, onSubmit}) {
 		this.el = el;
@@ -17,10 +21,8 @@ export class Form {
 	}
 
 	render() {
-		this.el.innerHTML = `
-			<form>
-				<textarea class="${this.blockname}__text_input" name="text" placeholder="Сообщение:"></textarea>
-				<input class="${this.blockname}__button_send" type="submit" value="Отправить">
-			</form>`;
+		this.el.innerHTML = formTemplate({
+			blockname: this.blockname
+		});
 	}
 }

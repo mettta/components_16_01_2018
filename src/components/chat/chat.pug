@@ -1,0 +1,11 @@
+ul(class= blockname + '__messages')
+	each message in messages
+		li(class= blockname + '__message')
+			if name 
+				span(class= blockname + '__message_name') = name : 
+			else 
+				span(class= blockname + '__message_noname') Гость: 
+			if text
+				span(class= blockname + '__message_text') = text
+			else
+				span(class= blockname + 'message_placeholder') промолчал...
