@@ -14,7 +14,7 @@ export class Chat {
 
 	_initEvents() { }
 
-	render({scroll} = {}) {
+	render() {
 		this._saveScrollTop();
 
 		this.el.innerHTML = `<ul class="chat__messages">${
