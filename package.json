@@ -1,8 +1,8 @@
 {
-  "name": "components_16_01_2018",
+  "name": "simple-chat",
   "version": "1.0.0",
-  "description": "Группа 16.01.2018 21:30",
-  "main": "index.js",
+  "description": "Задание в рамках курса javascript.ru",
+  "main": "index.html",
   "scripts": {
     "start": "./node_modules/.bin/static",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
@@ -10,17 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iketari/components_16_01_2018.git"
+    "url": "git+git@github.com:mettta/simple-chat.git"
   },
-  "author": "Artsiom Mezin",
+  "author": "Artsiom Mezin, Marina Balioura",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iketari/components_16_01_2018/issues"
+    "url": "https://github.com/mettta/simple-chat/issues"
   },
-  "homepage": "https://github.com/iketari/components_16_01_2018#readme",
+  "homepage": "https://github.com/mettta/simple-chat",
   "devDependencies": {
     "eslint": "^4.18.1",
     "eslint-config-google": "^0.9.1",
     "node-static": "^0.7.10"
+  },
+  "dependencies": {
+    "pug": "^2.0.1"
   }
 }
