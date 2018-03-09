@@ -15,13 +15,13 @@ export class App {
 		});
 
 		this.el.append(this.chat.el, this.form.el);
-		
-		this.chat.add([
-			{
-				name: 'AI',
-				text: 'Привет, я чат!'
-			}
-		]);
+
+		fetch('_data/chat.json').
+			then((res) => res.json()).
+			then(({chat}) => {
+				this.chat.add(chat.messages);
+				this.render();
+			});
 
 		this.render();
 	}
