@@ -1,6 +1,7 @@
 export class Form {
-	constructor({el, onSubmit}) {
+	constructor({el, template, onSubmit}) {
 		this.el = el;
+		this.template = template;
 		this.blockname = 'chatform';
 		this.el.classList.add(this.blockname);
 
@@ -17,7 +18,7 @@ export class Form {
 	}
 
 	render() {
-		this.el.innerHTML = formTemplate({
+		this.el.innerHTML = this.template({
 			blockname: this.blockname
 		});
 	}

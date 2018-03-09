@@ -1,8 +1,9 @@
 'use strict';
 
 export class Chat {
-	constructor({el, data = {messages: []}}) {
+	constructor({el, template, data = {messages: []}}) {
 		this.el = el;
+		this.template = template;
 		this.blockname = 'chat';
 		this.el.classList.add(this.blockname);
 
@@ -18,7 +19,7 @@ export class Chat {
 	render() {
 		this._saveScrollTop();
 
-		this.el.innerHTML = chatTemplate({
+		this.el.innerHTML = this.template({
 			blockname: this.blockname,
 			messages: this.data.messages
 		});

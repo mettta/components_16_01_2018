@@ -6,11 +6,13 @@ export class App {
 		this.el = el;
 
 		this.chat = new Chat({
-			el: document.createElement('div')
+			el: document.createElement('div'),
+			template: chatTemplate
 		});
 
 		this.form = new Form({
 			el: document.createElement('div'),
+			template: formTemplate,
 			onSubmit: this._onFormSubmit.bind(this)
 		});
 
