@@ -1,7 +1,3 @@
-import  './form.pug.js';
-
-// * as Template from
-
 export class Form {
 	constructor({el, onSubmit}) {
 		this.el = el;

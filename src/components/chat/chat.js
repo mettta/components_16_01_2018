@@ -22,8 +22,6 @@ export class Chat {
 			blockname: this.blockname,
 			messages: this.data.messages
 		});
-		
-		// `<ul class="chat__messages">${this._getMessagesHtml()}</ul>`;
 
 		this._restoreScrollTop(scroll);
 	}
@@ -73,21 +71,6 @@ export class Chat {
 
 	setUserName(name) {
 		this.data.user = name;
-	}
-
-
-
-	// html
-
-	_getMessagesHtml() {
-		return this.data.messages
-			.map((message) => 
-			`<li class="chat__message"><span class="chat__message_name">${
-			message.name ? message.name : `<span class="chat__user_placeholder">${DEFAULT_USER_NAME}</span>`
-			}</span>: <span class="chat__message_text">${
-			message.text ? message.text : `<span class="chat__message_placeholder">промолчал...</span>`
-			}</span></li>`)
-			.join(``);
 	}
 }
 
