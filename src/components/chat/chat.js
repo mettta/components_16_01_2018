@@ -41,10 +41,10 @@ export class Chat {
 		}
 	}
 
-	// setMessages(messages) {
-	// 	this.data.messages.length = 0;
-	// 	this.add(messages);
-	// }
+	setMessages(messages) {
+		this.data.messages.length = 0;
+		this.add(messages);
+	}
 
 	setScrollStrategy(strategy) {
 		this._scrollStrategy = strategy;
@@ -52,7 +52,6 @@ export class Chat {
 
 	add(messages) {
 		let addOneMessageMethod = this.addMessage.bind(this);
-
 		messages.forEach(addOneMessageMethod);
 	}
 

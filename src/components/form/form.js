@@ -9,17 +9,21 @@ export class Form {
 		this.onSubmit = onSubmit;
 	}
 
+	render() {
+		this.el.innerHTML = this.template({
+			blockname: this.blockname
+		});
+	}
+
+	reset() {
+		this.el.querySelector('form').reset();
+	}
+
 	_onSubmit(event) {
 		event.preventDefault();
 
 		this.onSubmit({
 			text: event.target.querySelector('textarea').value
-		});
-	}
-
-	render() {
-		this.el.innerHTML = this.template({
-			blockname: this.blockname
 		});
 	}
 }
